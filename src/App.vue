@@ -1,4 +1,6 @@
 <script>
+  import axios from 'axios';
+  import { store } from "./store.js";
   import AppHeader from "./components/AppHeader.vue";
   import AppMainContent from "./components/AppMainContent.vue";
 
@@ -7,17 +9,31 @@
       AppHeader,
       AppMainContent
     }
+    ,
+    data() {
+      return {
+        store
+      };
+    }
+    ,
+    methods: {
+      getCardsFromApi() {
+        
+      }
+    }
+    ,
+    mounted() {
+      this.getCardsFromApi();
+    }
   }
 </script>
 
 <template>
-
   <AppHeader></AppHeader>
 
   <main>
     <AppMainContent></AppMainContent>
   </main>
-
 </template>
 
 <style lang="scss">

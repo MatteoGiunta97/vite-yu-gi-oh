@@ -1,6 +1,11 @@
 <script>
+  import Card from "./Card.vue";
+
   export default {
-      name: 'AppMainContent'
+      name: 'AppMainContent',
+        components: {
+          Card
+        }
   }
 </script>
 
@@ -10,16 +15,17 @@
   <section class="cards-wrapper">
     <div class="container">
       <div class="cards-list">
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
-        <div class="card">temporibus perspiciatis autem minus error aut nesciunt repudiandae adipisci enim incidunt odit nam, aspernatur voluptates obcaecati.</div>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
       </div>
     </div>
   </section>
@@ -38,11 +44,6 @@
     .cards-list {
       display: flex;
       flex-wrap: wrap;
-
-      .card {
-        width: calc(100% / 5);
-        padding: 5px;
-      }
     }
   }
 }

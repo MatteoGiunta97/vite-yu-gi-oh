@@ -1,6 +1,9 @@
 <script>
   export default {
-      name: 'Card'
+      name: 'Card',
+      props: {
+        cardInfo: Object
+      }
   }
 </script>
 
@@ -8,14 +11,14 @@
 
     <div class="card">
         <div class="image">
-            <img src="#">
+            <img :src="cardInfo.card_images[0].image_url_small">
         </div>
         <div class="info-wrapper">
             <div class="name">
-                <h3>test</h3>
+                <h3>{{ cardInfo.name }}</h3>
             </div>
-            <div class="type">
-                <h5>test</h5>
+            <div class="archetype">
+                <h5>{{ cardInfo.archetype }}</h5>
             </div>
         </div>
     </div>
@@ -30,11 +33,16 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+
+        img {
+            width: 100%;
+        }
         
         .info-wrapper {
             background-color: #d48f38;
             text-align: center;
             padding: 10px;
+            width: 100%;
 
             h3 {
                 color:white;

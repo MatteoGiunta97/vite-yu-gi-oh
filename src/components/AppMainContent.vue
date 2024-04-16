@@ -1,10 +1,17 @@
 <script>
+  import { store } from "../store.js";
   import Card from "./Card.vue";
 
   export default {
       name: 'AppMainContent',
         components: {
           Card
+        }
+        ,
+        data() {
+          return {
+            store
+          };
         }
   }
 </script>
@@ -14,16 +21,7 @@
   <section class="cards-wrapper">
     <div class="container">
       <div class="cards-list">
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <Card v-for="card in store.cards" :key="card.id" :cardInfo="card"></Card>
       </div>
     </div>
   </section>

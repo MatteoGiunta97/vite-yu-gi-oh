@@ -3,11 +3,13 @@
   import { store } from "./store.js";
   import AppHeader from "./components/AppHeader.vue";
   import AppMainContent from "./components/AppMainContent.vue";
+  import Search from './components/Search.vue';
 
   export default {
     components: {
       AppHeader,
-      AppMainContent
+      AppMainContent,
+      Search
     }
     ,
     data() {
@@ -18,7 +20,19 @@
     ,
     methods: {
       getCardsFromApi() {
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+        
+        const queryParams = {
+          num: 20,
+          offset: 0
+        };
+
+        if(store.selectedArchetype !== '') {
+          queryParams.archetype = store.selectedArchetype
+        };
+
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
+          params: queryParams
+        })
         .then((response) => {
           store.cards = response.data.data;
         });
@@ -35,6 +49,7 @@
   <AppHeader></AppHeader>
 
   <main>
+    <Search @selectedSearch="getCardsFromApi"></Search>
     <AppMainContent></AppMainContent>
   </main>
 </template>

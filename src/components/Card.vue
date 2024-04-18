@@ -43,6 +43,7 @@
             text-align: center;
             padding: 10px;
             width: 100%;
+            height: 100%;
 
             h3 {
                 color:white;
